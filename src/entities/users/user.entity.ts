@@ -1,4 +1,11 @@
-import { Entity, Column, PrimaryGeneratedColumn, OneToMany } from 'typeorm';
+import {
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  OneToMany,
+  OneToOne,
+  JoinColumn,
+} from 'typeorm';
 import { Cart } from '../cart/cart.entity';
 import { Purchase } from '../purchases/purchase.entity';
 
@@ -16,8 +23,9 @@ export class User {
   @Column()
   email: string;
 
-  @OneToMany(() => Cart, (cart) => cart.user)
-  carts: Cart[];
+  @OneToOne(() => Cart, (cart) => cart.user)
+  @JoinColumn()
+  cart: Cart;
 
   @OneToMany(() => Purchase, (purchase) => purchase.user)
   purchases: Purchase[];

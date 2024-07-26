@@ -25,4 +25,8 @@ export class AdminsService {
   async remove(id: number): Promise<void> {
     await this.adminRepository.delete(id);
   }
+
+  async findOneByUsername(username: string): Promise<Admin | undefined> {
+    return this.adminRepository.findOne({ where: { username } });
+  }
 }
