@@ -17,10 +17,10 @@ import { AppService } from './app.service';
   imports: [
     TypeOrmModule.forRoot({
       type: 'postgres',
-      host: 'localhost',
+      host: 'demo-postgres.cp884kg0if7u.ap-south-1.rds.amazonaws.com',
       port: 5432,
-      username: 'tarunvenkatesh',
-      password: '123456',
+      username: 'postgres',
+      password: 'adminPGS',
       database: 'postgres',
       entities: [Admin, User, Cart, Purchase, Product],
       synchronize: true,
