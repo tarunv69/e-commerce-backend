@@ -12,6 +12,7 @@ import { PurchasesModule } from './entities/purchases/purchases.module';
 import { ProductsModule } from './entities/products/products.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
+import { S3Service } from './uploads/s3.service';
 
 @Module({
   imports: [
@@ -32,6 +33,6 @@ import { AppService } from './app.service';
     ProductsModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService, S3Service],
 })
 export class AppModule {}
