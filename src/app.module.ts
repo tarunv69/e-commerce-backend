@@ -13,6 +13,7 @@ import { ProductsModule } from './entities/products/products.module';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { S3Service } from './uploads/s3.service';
+import { S3Module } from './uploads/s3.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { S3Service } from './uploads/s3.service';
     CartModule,
     PurchasesModule,
     ProductsModule,
+    S3Module
   ],
   controllers: [AppController],
   providers: [AppService, S3Service],
